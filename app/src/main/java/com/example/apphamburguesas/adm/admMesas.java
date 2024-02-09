@@ -1,14 +1,16 @@
-package com.example.apphamburguesas;
+package com.example.apphamburguesas.adm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class admProductos extends AppCompatActivity {
+import com.example.apphamburguesas.R;
+
+public class admMesas extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adm_productos);
+        setContentView(R.layout.activity_adm_mesas);
     }
 }

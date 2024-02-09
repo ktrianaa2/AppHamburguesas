@@ -13,40 +13,43 @@
         android:theme="@style/Theme.AppHamburguesas"
         tools:targetApi="31">
         <activity
-            android:name=".admCocina"
+            android:name=".msr.msrPedidos"
             android:exported="false" />
         <activity
-            android:name=".admInventario"
+            android:name=".adm.admCocina"
             android:exported="false" />
         <activity
-            android:name=".admProveedores"
+            android:name=".adm.admInventario"
             android:exported="false" />
         <activity
-            android:name=".admBodegas"
+            android:name=".adm.admProveedores"
             android:exported="false" />
         <activity
-            android:name=".admSucursales"
+            android:name=".adm.admBodegas"
             android:exported="false" />
         <activity
-            android:name=".admRecompensas"
+            android:name=".adm.admSucursales"
             android:exported="false" />
         <activity
-            android:name=".admMesas"
+            android:name=".adm.admRecompensas"
             android:exported="false" />
         <activity
-            android:name=".admAnuncios"
+            android:name=".adm.admMesas"
             android:exported="false" />
         <activity
-            android:name=".admCombos"
+            android:name=".adm.admAnuncios"
             android:exported="false" />
         <activity
-            android:name=".admProductos"
+            android:name=".adm.admCombos"
             android:exported="false" />
         <activity
-            android:name=".admEmpleados"
+            android:name=".adm.admProductos"
             android:exported="false" />
         <activity
-            android:name=".admEmpresa"
+            android:name=".adm.admEmpleados"
+            android:exported="false" />
+        <activity
+            android:name=".adm.admEmpresa"
             android:exported="false" />
         <activity
             android:name=".AdmInventario"

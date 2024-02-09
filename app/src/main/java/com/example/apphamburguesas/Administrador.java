@@ -6,6 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.apphamburguesas.adm.admAnuncios;
+import com.example.apphamburguesas.adm.admBodegas;
+import com.example.apphamburguesas.adm.admCocina;
+import com.example.apphamburguesas.adm.admCombos;
+import com.example.apphamburguesas.adm.admEmpleados;
+import com.example.apphamburguesas.adm.admEmpresa;
+import com.example.apphamburguesas.adm.admInventario;
+import com.example.apphamburguesas.adm.admMesas;
+import com.example.apphamburguesas.adm.admProductos;
+import com.example.apphamburguesas.adm.admProveedores;
+import com.example.apphamburguesas.adm.admRecompensas;
+import com.example.apphamburguesas.adm.admSucursales;
+
 public class Administrador extends AppCompatActivity {
 
     CardView Empresa;

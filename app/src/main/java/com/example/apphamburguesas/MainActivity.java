@@ -72,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
 
         if (intent != null) {
             startActivity(intent);
-            finish();
         } else {
             Toast.makeText(MainActivity.this, "Error en las credenciales", Toast.LENGTH_SHORT).show();
         }
