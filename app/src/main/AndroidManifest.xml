@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppHamburguesas"
+        tools:targetApi="31">
+        <activity
+            android:name=".admCocina"
+            android:exported="false" />
+        <activity
+            android:name=".admInventario"
+            android:exported="false" />
+        <activity
+            android:name=".admProveedores"
+            android:exported="false" />
+        <activity
+            android:name=".admBodegas"
+            android:exported="false" />
+        <activity
+            android:name=".admSucursales"
+            android:exported="false" />
+        <activity
+            android:name=".admRecompensas"
+            android:exported="false" />
+        <activity
+            android:name=".admMesas"
+            android:exported="false" />
+        <activity
+            android:name=".admAnuncios"
+            android:exported="false" />
+        <activity
+            android:name=".admCombos"
+            android:exported="false" />
+        <activity
+            android:name=".admProductos"
+            android:exported="false" />
+        <activity
+            android:name=".admEmpleados"
+            android:exported="false" />
+        <activity
+            android:name=".admEmpresa"
+            android:exported="false" />
+        <activity
+            android:name=".AdmInventario"
+            android:exported="false" />
+        <activity
+            android:name=".Mesero"
+            android:exported="false" />
+        <activity
+            android:name=".Repartidor"
+            android:exported="false" />
+        <activity
+            android:name=".AyudanteDeCocina"
+            android:exported="false" />
+        <activity
+            android:name=".Administrador"
+            android:exported="false" />
+        <activity
+            android:name=".Cliente"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
