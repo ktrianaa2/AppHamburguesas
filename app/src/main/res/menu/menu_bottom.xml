@@ -10,12 +10,12 @@
         android:icon="@drawable/icon_search"/>
 
     <item
-        android:title=" "
+        android:title="Comprar"
         android:icon="@drawable/icon_add"/>
 
     <item
         android:title="Perfil"
-        android:icon="@drawable/icon_account"/>
+        android:icon="@drawable/ic_baseline_person_outline_24"/>
 
     <item
         android:title="Carrito"
