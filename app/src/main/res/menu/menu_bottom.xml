@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Inicio"
+        android:icon="@drawable/icon_home"/>
+
+    <item
+        android:title="Buscar"
+        android:icon="@drawable/icon_search"/>
+
+    <item
+        android:title=" "
+        android:icon="@drawable/icon_add"/>
+
+    <item
+        android:title="Perfil"
+        android:icon="@drawable/icon_account"/>
+
+    <item
+        android:title="Carrito"
+        android:icon="@drawable/icon_carshop"/>
+</menu>
