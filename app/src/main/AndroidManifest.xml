@@ -15,6 +15,9 @@
         android:theme="@style/Theme.AppHamburguesas"
         tools:targetApi="31">
         <activity
+            android:name=".Detalles_Comida"
+            android:exported="false" />
+        <activity
             android:name=".msr.msrPedidos"
             android:exported="false" />
         <activity

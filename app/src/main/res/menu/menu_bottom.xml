@@ -6,10 +6,6 @@
         android:icon="@drawable/icon_home"/>
 
     <item
-        android:title="Buscar"
-        android:icon="@drawable/icon_search"/>
-
-    <item
         android:title="Comprar"
         android:icon="@drawable/icon_add"/>
 
