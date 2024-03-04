@@ -39,8 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean validateCredentials(String username, String password) {
-        if ((username.equals("admin") || username.equals("ayudante") || username.equals("cliente")
-                || username.equals("mesero") || username.equals("repartidor"))
+        if ((username.equals("admin") || username.equals("ayudante") || username.equals("mesero") || username.equals("repartidor"))
                 && password.equals("123456")) {
             return true;
         }
@@ -55,9 +54,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case "ayudante":
                 intent = new Intent(MainActivity.this, AyudanteDeCocina.class);
-                break;
-            case "cliente":
-                intent = new Intent(MainActivity.this, Cliente.class);
                 break;
             case "mesero":
                 intent = new Intent(MainActivity.this, Mesero.class);
