@@ -48,5 +48,4 @@ public class Cliente extends AppCompatActivity {
                     return false;
                 }
             };
-
 }
