@@ -40,7 +40,7 @@ public class IniciarSesion extends AppCompatActivity {
         passwordEditText = findViewById(R.id.password);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://127.0.0.1:8000/") // Cambia esta URL por la URL base de tu API de Django
+                .baseUrl("https://wv7jhxv6-8000.brs.devtunnels.ms/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
