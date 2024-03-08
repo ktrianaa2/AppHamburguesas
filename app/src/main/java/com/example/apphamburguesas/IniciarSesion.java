@@ -5,18 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 
-public class MainActivity extends AppCompatActivity {
+public class IniciarSesion extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_iniciar_sesion);
 
         TextView user = findViewById(R.id.username);
         TextView password = findViewById(R.id.password);
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 if (validateCredentials(usernameInput, passwordInput)) {
                     openCorrespondingActivity(usernameInput);
                 } else {
-                    Toast.makeText(MainActivity.this, "Error en las credenciales", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(IniciarSesion.this, "Error en las credenciales", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -50,16 +49,16 @@ public class MainActivity extends AppCompatActivity {
         Intent intent;
         switch (username) {
             case "admin":
-                intent = new Intent(MainActivity.this, Administrador.class);
+                intent = new Intent(IniciarSesion.this, Administrador.class);
                 break;
             case "ayudante":
-                intent = new Intent(MainActivity.this, AyudanteDeCocina.class);
+                intent = new Intent(IniciarSesion.this, AyudanteDeCocina.class);
                 break;
             case "mesero":
-                intent = new Intent(MainActivity.this, Mesero.class);
+                intent = new Intent(IniciarSesion.this, Mesero.class);
                 break;
             case "repartidor":
-                intent = new Intent(MainActivity.this, Repartidor.class);
+                intent = new Intent(IniciarSesion.this, Repartidor.class);
                 break;
             default:
                 intent = null;
@@ -69,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         if (intent != null) {
             startActivity(intent);
         } else {
-            Toast.makeText(MainActivity.this, "Error en las credenciales", Toast.LENGTH_SHORT).show();
+            Toast.makeText(IniciarSesion.this, "Error en las credenciales", Toast.LENGTH_SHORT).show();
         }
     }
 

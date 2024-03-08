@@ -15,6 +15,27 @@
         android:theme="@style/Theme.AppHamburguesas"
         tools:targetApi="31">
         <activity
+            android:name=".adm.admDatosBancarios"
+            android:exported="false" />
+        <activity
+            android:name=".adm.admFacturacion"
+            android:exported="false" />
+        <activity
+            android:name=".adm.admValidarPagos"
+            android:exported="false" />
+        <activity
+            android:name=".adm.admReportes"
+            android:exported="false" />
+        <activity
+            android:name=".adm.admSri"
+            android:exported="false" />
+        <activity
+            android:name=".adm.admReversos"
+            android:exported="false" />
+        <activity
+            android:name=".adm.admPagos"
+            android:exported="false" />
+        <activity
             android:name=".cli.cliPerfil"
             android:exported="false" />
         <activity
@@ -81,7 +102,7 @@
             android:name=".Cliente"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".IniciarSesion"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

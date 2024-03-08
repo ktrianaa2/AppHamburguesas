@@ -5,184 +5,90 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import java.util.HashMap;
+import java.util.Map;
 
-import com.example.apphamburguesas.adm.admAnuncios;
-import com.example.apphamburguesas.adm.admBodegas;
-import com.example.apphamburguesas.adm.admCocina;
-import com.example.apphamburguesas.adm.admCombos;
-import com.example.apphamburguesas.adm.admEmpleados;
-import com.example.apphamburguesas.adm.admEmpresa;
-import com.example.apphamburguesas.adm.admInventario;
-import com.example.apphamburguesas.adm.admMesas;
-import com.example.apphamburguesas.adm.admProductos;
-import com.example.apphamburguesas.adm.admProveedores;
-import com.example.apphamburguesas.adm.admRecompensas;
-import com.example.apphamburguesas.adm.admSucursales;
+import com.example.apphamburguesas.adm.*;
 
 public class Administrador extends AppCompatActivity {
 
-    CardView Empresa;
-    CardView Empleados;
-    CardView Productos;
-    CardView Combos;
-    CardView Anuncios;
-    CardView Mesas;
-    CardView Recompensas;
-    CardView Sucursales;
-    CardView Bodegas;
-    CardView Proveedores;
-    CardView Inventario;
-    CardView Cocina;
+    private Map<String, Class<?>> activityMap = new HashMap<>();
+    private CardView[] cards;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_administrador);
 
-        Empresa = findViewById(R.id.cardEmpresa);
-        Empleados = findViewById(R.id.cardEmpleados);
-        Productos = findViewById(R.id.cardProductos);
-        Combos = findViewById(R.id.cardCombos);
-        Anuncios = findViewById(R.id.cardAnuncios);
-        Mesas = findViewById(R.id.cardMesas);
-        Recompensas = findViewById(R.id.cardRecompensas);
-        Sucursales = findViewById(R.id.cardSucursales);
-        Bodegas = findViewById(R.id.cardBodega);
-        Proveedores = findViewById(R.id.cardProveedores);
-        Inventario = findViewById(R.id.cardInventario);
-        Cocina = findViewById(R.id.cardCocina);
+        initializeActivityMap();
+        initializeCardViews();
 
-        Empresa.setTag("Empresa");
-        Empleados.setTag("Empleados");
-        Productos.setTag("Productos");
-        Combos.setTag("Combos");
-        Anuncios.setTag("Anuncios");
-        Mesas.setTag("Mesas");
-        Recompensas.setTag("Recompensas");
-        Sucursales.setTag("Sucursales");
-        Bodegas.setTag("Bodegas");
-        Proveedores.setTag("Proveedores");
-        Inventario.setTag("Inventario");
-        Cocina.setTag("Cocina");
+        setOnClickListeners();
+    }
 
-        Empresa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchActivity(v.getTag().toString());
-            }
-        });
+    private void initializeActivityMap() {
+        activityMap.put("Empresa", admEmpresa.class);
+        activityMap.put("Empleados", admEmpleados.class);
+        activityMap.put("Productos", admProductos.class);
+        activityMap.put("Combos", admCombos.class);
+        activityMap.put("Anuncios", admAnuncios.class);
+        activityMap.put("Mesas", admMesas.class);
+        activityMap.put("Recompensas", admRecompensas.class);
+        activityMap.put("Sucursales", admSucursales.class);
+        activityMap.put("Bodegas", admBodegas.class);
+        activityMap.put("Proveedores", admProveedores.class);
+        activityMap.put("Inventario", admInventario.class);
+        activityMap.put("Cocina", admCocina.class);
+        activityMap.put("Pagos", admPagos.class);
+        activityMap.put("Reversos", admReversos.class);
+        activityMap.put("SRI", admSri.class);
+        activityMap.put("Reportes", admReportes.class);
+        activityMap.put("PagosPedidos", admValidarPagos.class);
+        activityMap.put("PuntosFacturacion", admFacturacion.class);
+        activityMap.put("DatosBancarios", admDatosBancarios.class);
+    }
 
-        Empleados.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchActivity(v.getTag().toString());
-            }
-        });
+    private void initializeCardViews() {
+        cards = new CardView[]{
+                findViewById(R.id.cardEmpresa),
+                findViewById(R.id.cardEmpleados),
+                findViewById(R.id.cardProductos),
+                findViewById(R.id.cardCombos),
+                findViewById(R.id.cardAnuncios),
+                findViewById(R.id.cardMesas),
+                findViewById(R.id.cardRecompensas),
+                findViewById(R.id.cardSucursales),
+                findViewById(R.id.cardBodega),
+                findViewById(R.id.cardProveedores),
+                findViewById(R.id.cardInventario),
+                findViewById(R.id.cardCocina),
+                findViewById(R.id.cardPagos),
+                findViewById(R.id.cardReversos),
+                findViewById(R.id.cardSRI),
+                findViewById(R.id.cardReportes),
+                findViewById(R.id.cardPedidos),
+                findViewById(R.id.cardFacturacion),
+                findViewById(R.id.cardDatosBancarios)
+        };
 
-        Productos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchActivity(v.getTag().toString());
-            }
-        });
+        for (int i = 0; i < cards.length; i++) {
+            cards[i].setTag(activityMap.keySet().toArray()[i]);
+        }
+    }
 
-        Combos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchActivity(v.getTag().toString());
-            }
-        });
-
-        Anuncios.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchActivity(v.getTag().toString());
-            }
-        });
-
-        Mesas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchActivity(v.getTag().toString());
-            }
-        });
-
-        Recompensas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchActivity(v.getTag().toString());
-            }
-        });
-
-        Sucursales.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchActivity(v.getTag().toString());
-            }
-        });
-
-        Bodegas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchActivity(v.getTag().toString());
-            }
-        });
-
-        Proveedores.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchActivity(v.getTag().toString());
-            }
-        });
-
-        Inventario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchActivity(v.getTag().toString());
-            }
-        });
-
-        Cocina.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchActivity(v.getTag().toString());
-            }
-        });
+    private void setOnClickListeners() {
+        for (CardView card : cards) {
+            card.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    launchActivity(v.getTag().toString());
+                }
+            });
+        }
     }
 
     private void launchActivity(String activityName) {
-        Intent intent = new Intent(this, getActivityClass(activityName));
+        Intent intent = new Intent(this, activityMap.get(activityName));
         startActivity(intent);
-    }
-
-    private Class<?> getActivityClass(String activityName) {
-        switch (activityName) {
-            case "Empresa":
-                return admEmpresa.class;
-            case "Empleados":
-                return admEmpleados.class;
-            case "Productos":
-                return admProductos.class;
-            case "Combos":
-                return admCombos.class;
-            case "Anuncios":
-                return admAnuncios.class;
-            case "Mesas":
-                return admMesas.class;
-            case "Recompensas":
-                return admRecompensas.class;
-            case "Sucursales":
-                return admSucursales.class;
-            case "Bodegas":
-                return admBodegas.class;
-            case "Proveedores":
-                return admProveedores.class;
-            case "Inventario":
-                return admInventario.class;
-            case "Cocina":
-                return admCocina.class;
-            default:
-                return null;
-        }
     }
 }
