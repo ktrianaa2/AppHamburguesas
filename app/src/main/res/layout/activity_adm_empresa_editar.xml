@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background2"
-    tools:context=".adm.admEmpresa">
+    tools:context=".adm.admEmpresaEditar">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -61,11 +60,12 @@
                     android:text="Nombre"
                     android:textColor="#000000"
                     android:padding="5dp"/>
-                <TextView
-                    android:id="@+id/nombreEmpresaTextView"
+                <EditText
+                    android:id="@+id/nombreEmpresaEditText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nombre de la Empresa"
+                    android:textSize="14dp"
                     android:textColor="#000000"
                     android:padding="5dp"/>
             </TableRow>
@@ -80,11 +80,12 @@
                     android:text="Dirección"
                     android:textColor="#000000"
                     android:padding="5dp"/>
-                <TextView
-                    android:id="@+id/direccionTextView"
+                <EditText
+                    android:id="@+id/direccionEmpresaEditText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No disponible"
+                    android:text="Dirección"
+                    android:textSize="14dp"
                     android:textColor="#000000"
                     android:padding="5dp"/>
             </TableRow>
@@ -99,11 +100,12 @@
                     android:text="Teléfono"
                     android:textColor="#000000"
                     android:padding="5dp"/>
-                <TextView
-                    android:id="@+id/telefonoTextView"
+                <EditText
+                    android:id="@+id/telefonoEmpresaEditText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No disponible"
+                    android:text="Telèfono"
+                    android:textSize="14dp"
                     android:textColor="#000000"
                     android:padding="5dp"/>
             </TableRow>
@@ -119,11 +121,12 @@
                     android:text="Correo Electrónico"
                     android:textColor="#000000"
                     android:padding="5dp"/>
-                <TextView
-                    android:id="@+id/correoTextView"
+                <EditText
+                    android:id="@+id/correoElectronicoEmpresaEditText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No disponible"
+                    android:text="Correo Electrónico"
+                    android:textSize="14dp"
                     android:textColor="#000000"
                     android:padding="5dp"/>
             </TableRow>
@@ -138,11 +141,12 @@
                     android:text="Fecha de Fundación"
                     android:textColor="#000000"
                     android:padding="5dp"/>
-                <TextView
-                    android:id="@+id/fechaFundacionTextView"
+                <EditText
+                    android:id="@+id/fechaFundacionEmpresaEditText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2023-01-01"
+                    android:text="Fecha de Fundación"
+                    android:textSize="14dp"
                     android:textColor="#000000"
                     android:padding="5dp"/>
             </TableRow>
@@ -157,11 +161,12 @@
                     android:text="Sitio Web"
                     android:textColor="#000000"
                     android:padding="5dp"/>
-                <TextView
-                    android:id="@+id/sitioWebTextView"
+                <EditText
+                    android:id="@+id/sitioWebEmpresaEditText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No disponible"
+                    android:text="Sitio Web"
+                    android:textSize="14dp"
                     android:textColor="#000000"
                     android:padding="5dp"/>
             </TableRow>
@@ -175,11 +180,12 @@
                     android:text="Eslogan"
                     android:textColor="#000000"
                     android:padding="5dp"/>
-                <TextView
-                    android:id="@+id/esloganTextView"
+                <EditText
+                    android:id="@+id/sloganEmpresaEditText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No disponible"
+                    android:text="Eslogan"
+                    android:textSize="14dp"
                     android:textColor="#000000"
                     android:padding="5dp"/>
             </TableRow>
@@ -194,17 +200,31 @@
                     android:text="Logo"
                     android:textColor="#000000"
                     android:padding="5dp"/>
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:src="@drawable/logo"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:src="@drawable/logo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/selectImageButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seleccionar Imagen"
+                        android:backgroundTint="#2196F3"
+                        android:layout_marginTop="10dp"/>
+                </LinearLayout>
             </TableRow>
 
         </TableLayout>
@@ -223,11 +243,23 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/editButton"
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF0000"
+            android:gravity="center"
+            android:text="Cancelar"
+            android:layout_marginEnd="40dp"/>
+
+        <Button
+            android:id="@+id/confirmButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#2196F3"
             android:gravity="center"
-            android:text="Editar" />
+            android:text="Confirmar" />
+
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

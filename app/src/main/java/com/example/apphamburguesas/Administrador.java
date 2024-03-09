@@ -43,8 +43,8 @@ public class Administrador extends AppCompatActivity {
         activityMap.put("Reversos", admReversos.class);
         activityMap.put("SRI", admSri.class);
         activityMap.put("Reportes", admReportes.class);
-        activityMap.put("PagosPedidos", admValidarPagos.class);
-        activityMap.put("PuntosFacturacion", admFacturacion.class);
+        activityMap.put("ValidarPagos", admValidarPagos.class);
+        activityMap.put("Facturacion", admFacturacion.class);
         activityMap.put("DatosBancarios", admDatosBancarios.class);
     }
 
@@ -66,7 +66,7 @@ public class Administrador extends AppCompatActivity {
                 findViewById(R.id.cardReversos),
                 findViewById(R.id.cardSRI),
                 findViewById(R.id.cardReportes),
-                findViewById(R.id.cardPedidos),
+                findViewById(R.id.cardValidarPagos),
                 findViewById(R.id.cardFacturacion),
                 findViewById(R.id.cardDatosBancarios)
         };
