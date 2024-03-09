@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.apphamburguesas.Administrador;
 import com.example.apphamburguesas.R;
 
 public class admEmpresa extends AppCompatActivity {
@@ -22,7 +23,16 @@ public class admEmpresa extends AppCompatActivity {
         imageViewFlecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Cierra la actividad actual y regresa a la anterior
+                // Crea un Intent explícito para la actividad Administrador
+                Intent intent = new Intent(admEmpresa.this, Administrador.class);
+
+                // Agrega la bandera FLAG_ACTIVITY_CLEAR_TOP para eliminar todas las actividades de la pila
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                // Inicia la actividad Administrador
+                startActivity(intent);
+
+                // Finaliza la actividad actual
                 finish();
             }
         });

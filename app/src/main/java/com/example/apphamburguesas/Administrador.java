@@ -50,9 +50,9 @@ public class Administrador extends AppCompatActivity {
 
     private void initializeCardViews() {
         cards = new CardView[]{
-                findViewById(R.id.cardEmpresa),
-                findViewById(R.id.cardEmpleados),
                 findViewById(R.id.cardProductos),
+                findViewById(R.id.cardEmpleados),
+                findViewById(R.id.cardEmpresa),
                 findViewById(R.id.cardCombos),
                 findViewById(R.id.cardAnuncios),
                 findViewById(R.id.cardMesas),
