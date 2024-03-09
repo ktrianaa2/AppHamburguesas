@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.apphamburguesas.Administrador;
-import com.example.apphamburguesas.Interfaces.ApiServiceEmpresa;
+import com.example.apphamburguesas.Interfaces.ApiService;
 import com.example.apphamburguesas.Modelos.EmpresaResponse;
 import com.example.apphamburguesas.R;
 
@@ -65,7 +65,7 @@ public class admEmpresa extends AppCompatActivity {
     }
 
     private void obtenerDatosEmpresa() {
-        ApiServiceEmpresa apiService = RetrofitClient.getRetrofitInstance().create(ApiServiceEmpresa.class);
+        ApiService apiService = RetrofitClient.getRetrofitInstance().create(ApiService.class);
         Call<EmpresaResponse> call = apiService.obtenerEmpresa();
         call.enqueue(new Callback<EmpresaResponse>() {
             @Override
@@ -82,8 +82,12 @@ public class admEmpresa extends AppCompatActivity {
                     sitioWebTextView.setText(empresa.getSitioweb());
                     esloganTextView.setText(empresa.getEslogan());
                     // Aquí puedes manejar la imagen del logo si lo necesitas
+                } else {
+                    Log.e("admEmpresa", "Error en la respuesta: " + response.code());
                 }
             }
+
+
 
             @Override
             public void onFailure(Call<EmpresaResponse> call, Throwable t) {
