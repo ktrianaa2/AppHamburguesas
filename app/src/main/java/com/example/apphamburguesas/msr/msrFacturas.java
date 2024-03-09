@@ -8,14 +8,14 @@ import android.widget.ImageView;
 
 import com.example.apphamburguesas.R;
 
-public class msrPedidos extends AppCompatActivity {
+public class msrFacturas extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_msr_pedidos);
+        setContentView(R.layout.activity_msr_facturas);
 
-        ImageView imageViewFlecha = findViewById(R.id.imageView);
+        ImageView imageViewFlecha = findViewById(R.id.imageView2);
 
         imageViewFlecha.setOnClickListener(new View.OnClickListener() {
             @Override
