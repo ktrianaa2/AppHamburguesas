@@ -51,8 +51,9 @@ public class admAppWeb extends AppCompatActivity {
                 findViewById(R.id.cardAnuncios)
         };
 
-        for (int i = 0; i < cards.length; i++) {
-            cards[i].setTag(activityMap.keySet().toArray()[i]);
+        for (int i = 0; i < cards.length && i < activityMap.size(); i++) {
+            String key = (String) activityMap.keySet().toArray()[i];
+            cards[i].setTag(key);
         }
     }
 
