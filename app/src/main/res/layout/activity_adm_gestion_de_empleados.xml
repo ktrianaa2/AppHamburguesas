@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background2"
-    tools:context=".adm.admFacturacion">
+    tools:context=".adm.admGestionDeEmpleados">
 
     <ImageView
         android:id="@+id/flechaRetroceder"
@@ -22,7 +22,7 @@
         android:layout_width="269dp"
         android:layout_height="26dp"
         android:layout_marginTop="20dp"
-        android:text="Administrar Sitio Web"
+        android:text="Administrar Empleados"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +54,7 @@
             android:rowCount="4">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardValidarPagos"
+                android:id="@+id/cardControlDeEmpleados"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="0"
@@ -76,12 +76,47 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
+                        android:src="@drawable/empleados" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Control de Personal"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardControlDePagos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:src="@drawable/pagos" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Validar Pagos"
+                        android:text="Control de Pagos"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
                 </LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background2"
-    tools:context=".adm.gestionDeReversiones.admReversos">
+    tools:context=".adm.appWeb.admAdministrarAnuncios">
 
     <ImageView
         android:id="@+id/flechaRetroceder"
@@ -22,12 +22,13 @@
         android:layout_width="269dp"
         android:layout_height="26dp"
         android:layout_marginTop="20dp"
-        android:text="Reversos"
+        android:text="Administrar Anuncios"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.088"
         app:layout_constraintStart_toEndOf="@+id/flechaRetroceder"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

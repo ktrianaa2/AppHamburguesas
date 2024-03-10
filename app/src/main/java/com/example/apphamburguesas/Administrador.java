@@ -27,48 +27,27 @@ public class Administrador extends AppCompatActivity {
     }
 
     private void initializeActivityMap() {
-        activityMap.put("Empresa", admEmpresa.class);
-        activityMap.put("Empleados", admEmpleados.class);
-        activityMap.put("Productos", admProductos.class);
-        activityMap.put("Combos", admCombos.class);
-        activityMap.put("Anuncios", admAnuncios.class);
-        activityMap.put("Mesas", admMesas.class);
-        activityMap.put("Recompensas", admRecompensas.class);
-        activityMap.put("Sucursales", admSucursales.class);
-        activityMap.put("Bodegas", admBodegas.class);
-        activityMap.put("Proveedores", admProveedores.class);
-        activityMap.put("Inventario", admInventario.class);
-        activityMap.put("Cocina", admCocina.class);
-        activityMap.put("Pagos", admPagos.class);
-        activityMap.put("Reversos", admReversos.class);
-        activityMap.put("SRI", admSri.class);
+        activityMap.put("ManejarEmpresa", admManejarEmpresa.class);
+        activityMap.put("GestionDeEmpleados", admGestionDeEmpleados.class);
+        activityMap.put("GestionDeProductos", admGestionarProductos.class);
+        activityMap.put("GestionarDeReversiones", admGestionDeReversiones.class);
         activityMap.put("Reportes", admReportes.class);
-        activityMap.put("ValidarPagos", admValidarPagos.class);
+        activityMap.put("AppWeb", admAppWeb.class);
+        activityMap.put("PuntosDeRecompensa", admPuntosDeRecompensa.class);
         activityMap.put("Facturacion", admFacturacion.class);
-        activityMap.put("DatosBancarios", admDatosBancarios.class);
+
     }
 
     private void initializeCardViews() {
         cards = new CardView[]{
-                findViewById(R.id.cardProductos),
-                findViewById(R.id.cardEmpleados),
-                findViewById(R.id.cardEmpresa),
-                findViewById(R.id.cardCombos),
-                findViewById(R.id.cardAnuncios),
-                findViewById(R.id.cardMesas),
-                findViewById(R.id.cardRecompensas),
-                findViewById(R.id.cardSucursales),
-                findViewById(R.id.cardBodega),
-                findViewById(R.id.cardProveedores),
-                findViewById(R.id.cardInventario),
-                findViewById(R.id.cardCocina),
-                findViewById(R.id.cardPagos),
-                findViewById(R.id.cardReversos),
-                findViewById(R.id.cardSRI),
+                findViewById(R.id.cardManejarEmpresa),
+                findViewById(R.id.cardGestionDeEmpleados),
+                findViewById(R.id.cardGestionarProductos),
+                findViewById(R.id.cardGestionDeReversiones),
                 findViewById(R.id.cardReportes),
-                findViewById(R.id.cardValidarPagos),
-                findViewById(R.id.cardFacturacion),
-                findViewById(R.id.cardDatosBancarios)
+                findViewById(R.id.cardAppWeb),
+                findViewById(R.id.cardPuntosDeRecompensa),
+                findViewById(R.id.cardFacturacion)
         };
 
         for (int i = 0; i < cards.length; i++) {

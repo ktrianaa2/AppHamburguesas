@@ -16,6 +16,27 @@
         android:theme="@style/Theme.AppHamburguesas"
         tools:targetApi="31">
         <activity
+            android:name=".adm.puntosDeRecompensa.admConfigurarPuntosDeRecompensa"
+            android:exported="false" />
+        <activity
+            android:name=".adm.reportes.admGenerarReportes"
+            android:exported="false" />
+        <activity
+            android:name=".adm.admAppWeb"
+            android:exported="false" />
+        <activity
+            android:name=".adm.admGestionDeReversiones"
+            android:exported="false" />
+        <activity
+            android:name=".adm.admGestionarProductos"
+            android:exported="false" />
+        <activity
+            android:name=".adm.admGestionDeEmpleados"
+            android:exported="false" />
+        <activity
+            android:name=".adm.admManejarEmpresa"
+            android:exported="false" />
+        <activity
             android:name=".msr.msrValidarFacturas"
             android:exported="false" />
         <activity
@@ -25,67 +46,67 @@
             android:name=".msr.msrFacturas"
             android:exported="false" />
         <activity
-            android:name=".adm.admEmpresaEditar"
+            android:name=".adm.manejarEmpresa.admDatosGeneralesEditar"
             android:exported="false" />
         <activity
-            android:name=".adm.admDatosBancarios"
+            android:name=".adm.manejarEmpresa.admDatosBancarios"
             android:exported="false" />
         <activity
             android:name=".adm.admFacturacion"
             android:exported="false" />
         <activity
-            android:name=".adm.admValidarPagos"
+            android:name=".adm.facturacion.admValidarPagos"
             android:exported="false" />
         <activity
             android:name=".adm.admReportes"
             android:exported="false" />
         <activity
-            android:name=".adm.admSri"
+            android:name=".adm.manejarEmpresa.admSri"
             android:exported="false" />
         <activity
-            android:name=".adm.admReversos"
+            android:name=".adm.gestionDeReversiones.admReversos"
             android:exported="false" />
         <activity
-            android:name=".adm.admPagos"
+            android:name=".adm.gestionDeEmpleados.admControlDePagos"
             android:exported="false" />
         <activity
             android:name=".msr.msrPedidos"
             android:exported="false" />
         <activity
-            android:name=".adm.admCocina"
+            android:name=".adm.gestionarProductos.admCocina"
             android:exported="false" />
         <activity
-            android:name=".adm.admInventario"
+            android:name=".adm.gestionarProductos.admInventario"
             android:exported="false" />
         <activity
-            android:name=".adm.admProveedores"
+            android:name=".adm.manejarEmpresa.admGestionarProveedores"
             android:exported="false" />
         <activity
-            android:name=".adm.admBodegas"
+            android:name=".adm.gestionarProductos.admBodegas"
             android:exported="false" />
         <activity
-            android:name=".adm.admSucursales"
+            android:name=".adm.manejarEmpresa.admGestionarSucursales"
             android:exported="false" />
         <activity
-            android:name=".adm.admRecompensas"
+            android:name=".adm.admPuntosDeRecompensa"
             android:exported="false" />
         <activity
-            android:name=".adm.admMesas"
+            android:name=".adm.manejarEmpresa.admGestionarMesas"
             android:exported="false" />
         <activity
-            android:name=".adm.admAnuncios"
+            android:name=".adm.appWeb.admAdministrarAnuncios"
             android:exported="false" />
         <activity
-            android:name=".adm.admCombos"
+            android:name=".adm.gestionarProductos.admCombos"
             android:exported="false" />
         <activity
-            android:name=".adm.admProductos"
+            android:name=".adm.gestionarProductos.admProductos"
             android:exported="false" />
         <activity
-            android:name=".adm.admEmpleados"
+            android:name=".adm.gestionDeEmpleados.admControlDePersonal"
             android:exported="false" />
         <activity
-            android:name=".adm.admEmpresa"
+            android:name=".adm.manejarEmpresa.admDatosGenerales"
             android:exported="false" />
         <activity
             android:name=".Mesero"

@@ -9,19 +9,25 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.apphamburguesas.R;
-import com.example.apphamburguesas.adm.reportes.admGenerarReportes;
+import com.example.apphamburguesas.adm.gestionDeEmpleados.admControlDePagos;
+import com.example.apphamburguesas.adm.manejarEmpresa.admDatosBancarios;
+import com.example.apphamburguesas.adm.manejarEmpresa.admDatosGenerales;
+import com.example.apphamburguesas.adm.manejarEmpresa.admGestionarMesas;
+import com.example.apphamburguesas.adm.manejarEmpresa.admGestionarProveedores;
+import com.example.apphamburguesas.adm.manejarEmpresa.admGestionarSucursales;
+import com.example.apphamburguesas.adm.manejarEmpresa.admSri;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class admReportes extends AppCompatActivity {
+public class admManejarEmpresa extends AppCompatActivity {
 
     private Map<String, Class<?>> activityMap = new HashMap<>();
     private CardView[] cards;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adm_reportes);
+        setContentView(R.layout.activity_adm_manejar_empresa);
 
         ImageView imageViewFlecha = findViewById(R.id.flechaRetroceder);
         imageViewFlecha.setOnClickListener(new View.OnClickListener() {
@@ -38,13 +44,24 @@ public class admReportes extends AppCompatActivity {
         setOnClickListeners();
     }
 
+
     private void initializeActivityMap() {
-        activityMap.put("GenerarReportes", admGenerarReportes.class);
+        activityMap.put("DatosGenerales", admDatosGenerales.class);
+        activityMap.put("GestionarMesas", admGestionarMesas.class);
+        activityMap.put("GestionarProveedores", admGestionarProveedores.class);
+        activityMap.put("GestionarSucursales", admGestionarSucursales.class);
+        activityMap.put("SRI", admSri.class);
+        activityMap.put("DatosBancarios", admDatosBancarios.class);
     }
 
     private void initializeCardViews() {
         cards = new CardView[]{
-                findViewById(R.id.cardGenerarReportes)
+                findViewById(R.id.cardDatosEmpresa),
+                findViewById(R.id.cardGestionarMesas),
+                findViewById(R.id.cardGestionarProveedores),
+                findViewById(R.id.cardGestionarSucursales),
+                findViewById(R.id.cardSri),
+                findViewById(R.id.cardDatosBancarios)
         };
 
         for (int i = 0; i < cards.length; i++) {
