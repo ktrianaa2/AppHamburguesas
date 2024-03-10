@@ -9,19 +9,19 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.apphamburguesas.R;
-import com.example.apphamburguesas.adm.reportes.admGenerarReportes;
+import com.example.apphamburguesas.adm.gestionDeEmpleados.admControlDePagos;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class admReportes extends AppCompatActivity {
+public class admGestionDeEmpleados extends AppCompatActivity {
 
     private Map<String, Class<?>> activityMap = new HashMap<>();
     private CardView[] cards;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adm_reportes);
+        setContentView(R.layout.activity_adm_gestion_de_empleados);
 
         ImageView imageViewFlecha = findViewById(R.id.flechaRetroceder);
         imageViewFlecha.setOnClickListener(new View.OnClickListener() {
@@ -31,7 +31,6 @@ public class admReportes extends AppCompatActivity {
             }
         });
 
-
         initializeActivityMap();
         initializeCardViews();
 
@@ -39,12 +38,14 @@ public class admReportes extends AppCompatActivity {
     }
 
     private void initializeActivityMap() {
-        activityMap.put("GenerarReportes", admGenerarReportes.class);
+        activityMap.put("ControlDeEmpleados", admGestionDeEmpleados.class);
+        activityMap.put("ControlDePagos", admControlDePagos.class);
     }
 
     private void initializeCardViews() {
         cards = new CardView[]{
-                findViewById(R.id.cardGenerarReportes)
+                findViewById(R.id.cardControlDeEmpleados),
+                findViewById(R.id.cardControlDePagos),
         };
 
         for (int i = 0; i < cards.length; i++) {
@@ -67,4 +68,5 @@ public class admReportes extends AppCompatActivity {
         Intent intent = new Intent(this, activityMap.get(activityName));
         startActivity(intent);
     }
+
 }

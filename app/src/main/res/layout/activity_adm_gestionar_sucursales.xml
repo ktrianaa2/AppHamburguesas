@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background2"
-    tools:context=".adm.gestionarProductos.admCombos">
+    tools:context=".adm.manejarEmpresa.admGestionarSucursales">
 
     <ImageView
         android:id="@+id/flechaRetroceder"
@@ -22,7 +22,7 @@
         android:layout_width="269dp"
         android:layout_height="26dp"
         android:layout_marginTop="20dp"
-        android:text="Combos"
+        android:text="Gestionar Sucursales"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

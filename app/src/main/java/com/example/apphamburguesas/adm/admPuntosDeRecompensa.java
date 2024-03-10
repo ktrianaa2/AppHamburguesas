@@ -9,19 +9,20 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.apphamburguesas.R;
-import com.example.apphamburguesas.adm.reportes.admGenerarReportes;
+import com.example.apphamburguesas.adm.gestionDeEmpleados.admControlDePagos;
+import com.example.apphamburguesas.adm.puntosDeRecompensa.admConfigurarPuntosDeRecompensa;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class admReportes extends AppCompatActivity {
+public class admPuntosDeRecompensa extends AppCompatActivity {
 
     private Map<String, Class<?>> activityMap = new HashMap<>();
     private CardView[] cards;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adm_reportes);
+        setContentView(R.layout.activity_adm_puntos_de_recompensas);
 
         ImageView imageViewFlecha = findViewById(R.id.flechaRetroceder);
         imageViewFlecha.setOnClickListener(new View.OnClickListener() {
@@ -39,12 +40,12 @@ public class admReportes extends AppCompatActivity {
     }
 
     private void initializeActivityMap() {
-        activityMap.put("GenerarReportes", admGenerarReportes.class);
+        activityMap.put("Configurar", admConfigurarPuntosDeRecompensa.class);
     }
 
     private void initializeCardViews() {
         cards = new CardView[]{
-                findViewById(R.id.cardGenerarReportes)
+                findViewById(R.id.cardConfigurar),
         };
 
         for (int i = 0; i < cards.length; i++) {
