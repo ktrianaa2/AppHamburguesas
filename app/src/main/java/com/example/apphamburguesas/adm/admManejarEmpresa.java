@@ -17,13 +17,11 @@ import com.example.apphamburguesas.adm.manejarEmpresa.admGestionarProveedores;
 import com.example.apphamburguesas.adm.manejarEmpresa.admGestionarSucursales;
 import com.example.apphamburguesas.adm.manejarEmpresa.admSri;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class admManejarEmpresa extends AppCompatActivity {
 
-    private Map<String, Class<?>> activityMap = new HashMap<>();
-    private CardView[] cards;
+    private CardView cardDatosEmpresa, cardGestionarMesas, cardGestionarProveedores,
+            cardGestionarSucursales, cardSri, cardDatosBancarios;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,51 +35,60 @@ public class admManejarEmpresa extends AppCompatActivity {
             }
         });
 
-
-        initializeActivityMap();
         initializeCardViews();
-
         setOnClickListeners();
     }
 
-
-    private void initializeActivityMap() {
-        activityMap.put("DatosGenerales", admDatosGenerales.class);
-        activityMap.put("GestionarMesas", admGestionarMesas.class);
-        activityMap.put("GestionarProveedores", admGestionarProveedores.class);
-        activityMap.put("GestionarSucursales", admGestionarSucursales.class);
-        activityMap.put("SRI", admSri.class);
-        activityMap.put("DatosBancarios", admDatosBancarios.class);
-    }
-
     private void initializeCardViews() {
-        cards = new CardView[]{
-                findViewById(R.id.cardDatosEmpresa),
-                findViewById(R.id.cardGestionarMesas),
-                findViewById(R.id.cardGestionarProveedores),
-                findViewById(R.id.cardGestionarSucursales),
-                findViewById(R.id.cardSri),
-                findViewById(R.id.cardDatosBancarios)
-        };
+        cardDatosEmpresa = findViewById(R.id.cardDatosEmpresa);
+        cardGestionarMesas = findViewById(R.id.cardGestionarMesas);
+        cardGestionarProveedores = findViewById(R.id.cardGestionarProveedores);
+        cardGestionarSucursales = findViewById(R.id.cardGestionarSucursales);
+        cardSri = findViewById(R.id.cardSri);
+        cardDatosBancarios = findViewById(R.id.cardDatosBancarios);
 
-        for (int i = 0; i < cards.length; i++) {
-            cards[i].setTag(activityMap.keySet().toArray()[i]);
-        }
+        cardDatosEmpresa.setTag("DatosGenerales");
+        cardGestionarMesas.setTag("GestionarMesas");
+        cardGestionarProveedores.setTag("GestionarProveedores");
+        cardGestionarSucursales.setTag("GestionarSucursales");
+        cardSri.setTag("SRI");
+        cardDatosBancarios.setTag("DatosBancarios");
     }
 
     private void setOnClickListeners() {
-        for (CardView card : cards) {
-            card.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    launchActivity(v.getTag().toString());
-                }
-            });
-        }
+        cardDatosEmpresa.setOnClickListener(v -> launchActivity(v.getTag().toString()));
+        cardGestionarMesas.setOnClickListener(v -> launchActivity(v.getTag().toString()));
+        cardGestionarProveedores.setOnClickListener(v -> launchActivity(v.getTag().toString()));
+        cardGestionarSucursales.setOnClickListener(v -> launchActivity(v.getTag().toString()));
+        cardSri.setOnClickListener(v -> launchActivity(v.getTag().toString()));
+        cardDatosBancarios.setOnClickListener(v -> launchActivity(v.getTag().toString()));
     }
 
     private void launchActivity(String activityName) {
-        Intent intent = new Intent(this, activityMap.get(activityName));
-        startActivity(intent);
+        Class<?> activityClass = null;
+        switch (activityName) {
+            case "DatosGenerales":
+                activityClass = admDatosGenerales.class;
+                break;
+            case "GestionarMesas":
+                activityClass = admGestionarMesas.class;
+                break;
+            case "GestionarProveedores":
+                activityClass = admGestionarProveedores.class;
+                break;
+            case "GestionarSucursales":
+                activityClass = admGestionarSucursales.class;
+                break;
+            case "SRI":
+                activityClass = admSri.class;
+                break;
+            case "DatosBancarios":
+                activityClass = admDatosBancarios.class;
+                break;
+        }
+        if (activityClass != null) {
+            Intent intent = new Intent(this, activityClass);
+            startActivity(intent);
+        }
     }
 }
