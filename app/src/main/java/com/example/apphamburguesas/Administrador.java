@@ -8,6 +8,7 @@ import android.view.View;
 import java.util.HashMap;
 import java.util.Map;
 import com.example.apphamburguesas.adm.*;
+import com.google.android.material.button.MaterialButton;
 
 public class Administrador extends AppCompatActivity {
 
@@ -22,6 +23,21 @@ public class Administrador extends AppCompatActivity {
         initializeActivityMap();
         initializeCardViews();
         setOnClickListeners();
+
+        // Obtener referencia al botón de cerrar sesión
+        MaterialButton exitButton = findViewById(R.id.exitbtn);
+
+        // Agregar OnClickListener al botón de cerrar sesión
+        exitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Cerrar sesión (aquí deberías realizar cualquier acción necesaria para cerrar la sesión del usuario)
+                // Redirigir al usuario a la pantalla de inicio de sesión
+                Intent intent = new Intent(Administrador.this, IniciarSesion.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Limpiar la pila de actividades
+                startActivity(intent);
+            }
+        });
     }
 
     private void initializeActivityMap() {
