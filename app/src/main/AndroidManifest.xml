@@ -25,6 +25,9 @@
             android:name=".adm.admAppWeb"
             android:exported="false" />
         <activity
+            android:name=".adm.admComandas"
+            android:exported="false" />
+        <activity
             android:name=".adm.admGestionDeReversiones"
             android:exported="false" />
         <activity

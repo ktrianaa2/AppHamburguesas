@@ -14,7 +14,7 @@ public class Administrador extends AppCompatActivity {
 
     private Map<String, Class<?>> activityMap = new HashMap<>();
     private CardView cardManejarEmpresa, cardGestionDeEmpleados, cardGestionarProductos, cardGestionDeReversiones,
-            cardReportes, cardAppWeb, cardPuntosDeRecompensa, cardFacturacion;
+            cardReportes, cardAppWeb, cardPuntosDeRecompensa, cardFacturacion, cardComandas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class Administrador extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
+    } 
 
     private void initializeActivityMap() {
         activityMap.put("ManejarEmpresa", com.example.apphamburguesas.adm.admManejarEmpresa.class);
@@ -49,6 +49,7 @@ public class Administrador extends AppCompatActivity {
         activityMap.put("AppWeb", com.example.apphamburguesas.adm.admAppWeb.class);
         activityMap.put("PuntosDeRecompensa", com.example.apphamburguesas.adm.admPuntosDeRecompensa.class);
         activityMap.put("Facturacion", com.example.apphamburguesas.adm.admFacturacion.class);
+        activityMap.put("Comandas",com.example.apphamburguesas.adm.admComandas.class);
     }
 
     private void initializeCardViews() {
@@ -60,6 +61,9 @@ public class Administrador extends AppCompatActivity {
         cardAppWeb = findViewById(R.id.cardAppWeb);
         cardPuntosDeRecompensa = findViewById(R.id.cardPuntosDeRecompensa);
         cardFacturacion = findViewById(R.id.cardFacturacion);
+        cardComandas = findViewById(R.id.cardComandas);
+
+
 
         cardManejarEmpresa.setTag("ManejarEmpresa");
         cardGestionDeEmpleados.setTag("GestionDeEmpleados");
@@ -69,6 +73,7 @@ public class Administrador extends AppCompatActivity {
         cardAppWeb.setTag("AppWeb");
         cardPuntosDeRecompensa.setTag("PuntosDeRecompensa");
         cardFacturacion.setTag("Facturacion");
+        cardComandas.setTag("Comandas");
     }
 
     private void setOnClickListeners() {
@@ -80,6 +85,7 @@ public class Administrador extends AppCompatActivity {
         cardAppWeb.setOnClickListener(v -> launchActivity(v.getTag().toString()));
         cardPuntosDeRecompensa.setOnClickListener(v -> launchActivity(v.getTag().toString()));
         cardFacturacion.setOnClickListener(v -> launchActivity(v.getTag().toString()));
+        cardComandas.setOnClickListener(v -> launchActivity(v.getTag().toString()));
     }
 
     private void launchActivity(String activityName) {
