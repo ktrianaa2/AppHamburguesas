@@ -112,6 +112,21 @@
             android:name=".adm.manejarEmpresa.admDatosGenerales"
             android:exported="false" />
         <activity
+            android:name=".adm.gestionarProductos.ControlProductos.admProducto"
+            android:exported="false" />
+        <activity
+            android:name=".adm.gestionarProductos.ControlProductos.admUnidadMedida"
+            android:exported="false" />
+        <activity
+            android:name=".adm.gestionarProductos.ControlProductos.admTipoProducto"
+            android:exported="false" />
+        <activity
+            android:name=".adm.gestionarProductos.ControlProductos.admCategoriaProducto"
+            android:exported="false" />
+        <activity
+            android:name=".adm.gestionarProductos.ControlProductos.admArticulos"
+            android:exported="false" />
+        <activity
             android:name=".Mesero"
             android:exported="false" />
         <activity

@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.apphamburguesas.R;
-import com.example.apphamburguesas.adm.gestionDeEmpleados.admControlDePagos;
 import com.example.apphamburguesas.adm.gestionarProductos.admBodegas;
 import com.example.apphamburguesas.adm.gestionarProductos.admCocina;
 import com.example.apphamburguesas.adm.gestionarProductos.admCombos;
@@ -22,7 +21,8 @@ import java.util.Map;
 public class admGestionarProductos extends AppCompatActivity {
 
     private Map<String, Class<?>> activityMap = new HashMap<>();
-    private CardView[] cards;
+    private CardView cardBodegas, cardCocina, cardProductos, cardInventario, cardCombos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +38,6 @@ public class admGestionarProductos extends AppCompatActivity {
 
         initializeActivityMap();
         initializeCardViews();
-
         setOnClickListeners();
     }
 
@@ -51,28 +50,25 @@ public class admGestionarProductos extends AppCompatActivity {
     }
 
     private void initializeCardViews() {
-        cards = new CardView[]{
-                findViewById(R.id.cardBodegas),
-                findViewById(R.id.cardCocina),
-                findViewById(R.id.cardProductos),
-                findViewById(R.id.cardInventario),
-                findViewById(R.id.cardCombos)
-        };
+        cardBodegas = findViewById(R.id.cardBodegas);
+        cardCocina = findViewById(R.id.cardCocina);
+        cardProductos = findViewById(R.id.cardProductos);
+        cardInventario = findViewById(R.id.cardInventario);
+        cardCombos = findViewById(R.id.cardCombos);
 
-        for (int i = 0; i < cards.length; i++) {
-            cards[i].setTag(activityMap.keySet().toArray()[i]);
-        }
+        cardBodegas.setTag("Bodegas");
+        cardCocina.setTag("Cocina");
+        cardProductos.setTag("Productos");
+        cardInventario.setTag("Inventario");
+        cardCombos.setTag("Combos");
     }
 
     private void setOnClickListeners() {
-        for (CardView card : cards) {
-            card.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    launchActivity(v.getTag().toString());
-                }
-            });
-        }
+        cardBodegas.setOnClickListener(v -> launchActivity(v.getTag().toString()));
+        cardCocina.setOnClickListener(v -> launchActivity(v.getTag().toString()));
+        cardProductos.setOnClickListener(v -> launchActivity(v.getTag().toString()));
+        cardInventario.setOnClickListener(v -> launchActivity(v.getTag().toString()));
+        cardCombos.setOnClickListener(v -> launchActivity(v.getTag().toString()));
     }
 
     private void launchActivity(String activityName) {
