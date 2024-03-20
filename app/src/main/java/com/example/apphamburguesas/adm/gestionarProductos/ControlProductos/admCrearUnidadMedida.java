@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.apphamburguesas.R;
 
-public class admProducto extends AppCompatActivity {
+public class admCrearUnidadMedida extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

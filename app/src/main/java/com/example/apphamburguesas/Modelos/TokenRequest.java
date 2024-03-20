@@ -7,7 +7,6 @@ public class TokenRequest {
         this.token = token;
     }
 
-    // Getters y setters
     public String getToken() {
         return token;
     }
