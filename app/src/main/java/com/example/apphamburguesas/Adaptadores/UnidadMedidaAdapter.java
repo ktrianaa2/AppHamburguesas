@@ -5,7 +5,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,48 +12,52 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.apphamburguesas.Modelos.UnidadMedida;
 import com.example.apphamburguesas.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class UnidadMedidaAdapter extends RecyclerView.Adapter<UnidadMedidaAdapter.UnidadMedidaViewHolder> {
-    private List<UnidadMedida> unidadesMedida;
+public class UnidadMedidaAdapter extends RecyclerView.Adapter<UnidadMedidaAdapter.ViewHolder> {
+    private List<UnidadMedida> unidadesMedida = new ArrayList<>();
+    private OnItemClickListener listener;
 
     public void setUnidadesMedida(List<UnidadMedida> unidadesMedida) {
-        this.unidadesMedida = unidadesMedida;
+        this.unidadesMedida = new ArrayList<>(unidadesMedida);
         notifyDataSetChanged();
     }
 
     @NonNull
     @Override
-    public UnidadMedidaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_unidad_medida, parent, false);
-        return new UnidadMedidaViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull UnidadMedidaViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         UnidadMedida unidadMedida = unidadesMedida.get(position);
         holder.bind(unidadMedida);
+
+        // Configuración del OnClickListener para el botón editarButton
         holder.editarButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                // Aquí manejas la acción de editar, por ejemplo, puedes abrir una nueva actividad
-                // para la edición pasando la ID de la unidad de medida a la actividad.
-                Toast.makeText(v.getContext(), "Editar unidad de medida: " + unidadMedida.getIdUm(), Toast.LENGTH_SHORT).show();
+            public void onClick(View view) {
+                if (listener != null) {
+                    listener.onItemClick(unidadMedida);
+                }
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return unidadesMedida != null ? unidadesMedida.size() : 0;
+        return unidadesMedida.size();
     }
 
-    static class UnidadMedidaViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView idUmTextView;
         private TextView nombreUmTextView;
         private Button editarButton;
 
-        public UnidadMedidaViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
             idUmTextView = itemView.findViewById(R.id.idUmTextView);
             nombreUmTextView = itemView.findViewById(R.id.nombreUmTextView);
@@ -65,5 +68,13 @@ public class UnidadMedidaAdapter extends RecyclerView.Adapter<UnidadMedidaAdapte
             idUmTextView.setText("ID: " + unidadMedida.getIdUm());
             nombreUmTextView.setText("Nombre: " + unidadMedida.getNombreUm());
         }
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(UnidadMedida unidadMedida);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
     }
 }
