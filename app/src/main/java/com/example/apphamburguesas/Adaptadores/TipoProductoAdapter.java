@@ -3,21 +3,22 @@ package com.example.apphamburguesas.Adaptadores;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.apphamburguesas.Modelos.TipoProducto;
 import com.example.apphamburguesas.R;
-
 import java.util.List;
 
 public class TipoProductoAdapter extends RecyclerView.Adapter<TipoProductoAdapter.TipoProductoViewHolder> {
-    private List<TipoProducto> tiposProductos;
 
-    public TipoProductoAdapter(List<TipoProducto> tiposProductos) {
+    private List<TipoProducto> tiposProductos;
+    private OnEditarClickListener editarClickListener;
+
+    public TipoProductoAdapter(List<TipoProducto> tiposProductos, OnEditarClickListener editarClickListener) {
         this.tiposProductos = tiposProductos;
+        this.editarClickListener = editarClickListener;
     }
 
     @NonNull
@@ -32,20 +33,37 @@ public class TipoProductoAdapter extends RecyclerView.Adapter<TipoProductoAdapte
         TipoProducto tipoProducto = tiposProductos.get(position);
         holder.nombreTextView.setText(tipoProducto.getTpnombre());
         holder.descripcionTextView.setText(tipoProducto.getDescripcion());
+
+        holder.editarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (editarClickListener != null) {
+                    editarClickListener.onEditarClick(tipoProducto);
+                }
+            }
+        });
     }
+
 
     @Override
     public int getItemCount() {
         return tiposProductos.size();
     }
 
-    public static class TipoProductoViewHolder extends RecyclerView.ViewHolder {
+    static class TipoProductoViewHolder extends RecyclerView.ViewHolder {
         TextView nombreTextView, descripcionTextView;
+        Button editarButton;
 
-        public TipoProductoViewHolder(@NonNull View itemView) {
+        TipoProductoViewHolder(@NonNull View itemView) {
             super(itemView);
             nombreTextView = itemView.findViewById(R.id.nombreTextView);
             descripcionTextView = itemView.findViewById(R.id.descripcionTextView);
+            editarButton = itemView.findViewById(R.id.editarButton);
         }
+    }
+
+    // Interfaz para manejar los clics de edición
+    public interface OnEditarClickListener {
+        void onEditarClick(TipoProducto tipoProducto);
     }
 }

@@ -1,5 +1,6 @@
 package com.example.apphamburguesas.Interfaces;
 
+import com.example.apphamburguesas.Modelos.EditarTipoProductoRequest;
 import com.example.apphamburguesas.Modelos.EditarUnidadMedidaRequest;
 import com.example.apphamburguesas.Modelos.LoginRequest;
 import com.example.apphamburguesas.Modelos.LoginResponse;
@@ -47,4 +48,6 @@ public interface ApiService {
     @POST("producto/creartipop/")
     Call<Void> crearTipoProducto(@Body NuevoTipoProducto nuevoTipoProducto);
 
+    @POST("producto/editartipop/{tipo_producto_id}/")
+    Call<Void> editarTipoProducto(@Path("tipo_producto_id") int tipoProductoId, @Body EditarTipoProductoRequest editarTipoProductoRequest);
 }

@@ -1,22 +1,22 @@
 package com.example.apphamburguesas.Modelos;
 
 public class TipoProducto {
-    private int id_tipoproducto;
+    private int id;
     private String tpnombre;
     private String descripcion;
 
-    public TipoProducto(int id_tipoproducto, String tpnombre, String descripcion) {
-        this.id_tipoproducto = id_tipoproducto;
+    public TipoProducto(int id, String tpnombre, String descripcion) {
+        this.id = id;
         this.tpnombre = tpnombre;
         this.descripcion = descripcion;
     }
 
-    public int getId_tipoproducto() {
-        return id_tipoproducto;
+    public int getId() {
+        return id;
     }
 
-    public void setId_tipoproducto(int id_tipoproducto) {
-        this.id_tipoproducto = id_tipoproducto;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTpnombre() {
