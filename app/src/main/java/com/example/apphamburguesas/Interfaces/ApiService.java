@@ -5,6 +5,7 @@ import com.example.apphamburguesas.Modelos.LoginRequest;
 import com.example.apphamburguesas.Modelos.LoginResponse;
 import com.example.apphamburguesas.Modelos.RespuestaEmpresa;
 import com.example.apphamburguesas.Modelos.RolResponse;
+import com.example.apphamburguesas.Modelos.TipoProductoResponse;
 import com.example.apphamburguesas.Modelos.TokenRequest;
 import com.example.apphamburguesas.Modelos.UnidadMedida;
 import com.example.apphamburguesas.Modelos.UnidadMedidaResponse;
@@ -38,4 +39,8 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("producto/editarum/{unidad_id}/")
     Call<Void> editarUnidadMedida(@Path("unidad_id") int unidadId, @Field("nombreUm") String nuevoNombre);
+
+    @GET("producto/listarproductos/")
+    Call<TipoProductoResponse> listarTiposProductos();
+
 }
