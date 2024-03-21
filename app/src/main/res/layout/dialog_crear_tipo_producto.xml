@@ -2,34 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <EditText
-        android:id="@+id/editTextNombre"
-        android:layout_width="wrap_content"
+        android:id="@+id/editTextNombreTipoProducto"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre del tipo de producto" />
+        android:hint="Nombre del tipo de producto"
+        android:inputType="text"/>
 
     <EditText
-        android:id="@+id/editTextDescripcion"
-        android:layout_width="wrap_content"
+        android:id="@+id/editTextDescripcionTipoProducto"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Descripción del tipo de producto" />
-
-    <Button
-        android:id="@+id/buttonCrear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:orientation="horizontal"
-        android:text="Crear" />
-
-    <Button
-        android:id="@+id/buttonCancelar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:orientation="horizontal"
-        android:text="Cancelar" />
+        android:hint="Descripción del tipo de producto"
+        android:inputType="text"/>
 
 </LinearLayout>
