@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 import com.example.apphamburguesas.R;
 import com.example.apphamburguesas.adm.gestionDeEmpleados.admControlDePagos;
+import com.example.apphamburguesas.adm.gestionDeEmpleados.admControlDePersonal;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +18,8 @@ import java.util.Map;
 public class admGestionDeEmpleados extends AppCompatActivity {
 
     private Map<String, Class<?>> activityMap = new HashMap<>();
-    private CardView[] cards;
+    private CardView cardControlDeEmpleados, cardControlDePagos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,40 +35,29 @@ public class admGestionDeEmpleados extends AppCompatActivity {
 
         initializeActivityMap();
         initializeCardViews();
-
         setOnClickListeners();
     }
 
     private void initializeActivityMap() {
-        activityMap.put("ControlDeEmpleados", admGestionDeEmpleados.class);
+        activityMap.put("ControlDeEmpleados", admControlDePersonal.class);
         activityMap.put("ControlDePagos", admControlDePagos.class);
     }
 
     private void initializeCardViews() {
-        cards = new CardView[]{
-                findViewById(R.id.cardControlDeEmpleados),
-                findViewById(R.id.cardControlDePagos),
-        };
+        cardControlDeEmpleados = findViewById(R.id.cardControlDeEmpleados);
+        cardControlDePagos = findViewById(R.id.cardControlDePagos);
 
-        for (int i = 0; i < cards.length; i++) {
-            cards[i].setTag(activityMap.keySet().toArray()[i]);
-        }
+        cardControlDeEmpleados.setTag("ControlDeEmpleados");
+        cardControlDePagos.setTag("ControlDePagos");
     }
 
     private void setOnClickListeners() {
-        for (CardView card : cards) {
-            card.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    launchActivity(v.getTag().toString());
-                }
-            });
-        }
+        cardControlDeEmpleados.setOnClickListener(v -> launchActivity(v.getTag().toString()));
+        cardControlDePagos.setOnClickListener(v -> launchActivity(v.getTag().toString()));
     }
 
     private void launchActivity(String activityName) {
         Intent intent = new Intent(this, activityMap.get(activityName));
         startActivity(intent);
     }
-
 }

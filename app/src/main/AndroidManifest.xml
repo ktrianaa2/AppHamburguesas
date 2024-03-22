@@ -126,6 +126,22 @@
         <activity
             android:name=".adm.gestionarProductos.ControlProductos.admArticulos"
             android:exported="false" />
+
+        <activity
+            android:name=".adm.gestionDeEmpleados.ControlPersonal.admControlMotorizado"
+            android:exported="false" />
+        <activity
+            android:name=".adm.gestionDeEmpleados.ControlPersonal.admControlMesero"
+            android:exported="false" />
+        <activity
+            android:name=".adm.gestionDeEmpleados.ControlPersonal.admControlJefeCocina"
+            android:exported="false" />
+        <activity
+            android:name=".adm.gestionDeEmpleados.ControlPersonal.admControlAdministrador"
+            android:exported="false" />
+        <activity
+            android:name=".adm.gestionDeEmpleados.ControlPersonal.admControlCrearEmpleado"
+            android:exported="false" />
         <activity
             android:name=".Mesero"
             android:exported="false" />
