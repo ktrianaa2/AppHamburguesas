@@ -53,19 +53,17 @@ public class UnidadMedidaAdapter extends RecyclerView.Adapter<UnidadMedidaAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView idUmTextView;
+
         private TextView nombreUmTextView;
         private Button editarButton;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            idUmTextView = itemView.findViewById(R.id.idUmTextView);
             nombreUmTextView = itemView.findViewById(R.id.nombreUmTextView);
             editarButton = itemView.findViewById(R.id.editarButton);
         }
 
         public void bind(UnidadMedida unidadMedida) {
-            idUmTextView.setText("ID: " + unidadMedida.getIdUm());
             nombreUmTextView.setText("Nombre: " + unidadMedida.getNombreUm());
         }
     }
